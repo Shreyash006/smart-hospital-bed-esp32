@@ -1,0 +1,59 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+const int fsrPin = 34;
+
+int fsrValue = 0;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  // OLED initialization
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("OLED failed");
+    while(true);
+  }
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+
+}
+
+void loop() {
+
+  fsrValue = analogRead(fsrPin);
+
+  Serial.print("FSR Value: ");
+  Serial.println(fsrValue);
+
+  display.clearDisplay();
+
+  display.setCursor(0,0);
+  display.println("Smart Hospital Bed");
+
+  display.setCursor(0,20);
+  display.print("Pressure: ");
+  display.println(fsrValue);
+
+  // Status condition
+  display.setCursor(0,40);
+
+  if(fsrValue > 1000) {
+    display.println("Patient Present");
+  }
+  else {
+    display.println("Patient Absent!");
+  }
+
+  display.display();
+
+  delay(500);
+}

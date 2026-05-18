@@ -15,3 +15,13 @@ ESP32-based smart hospital bed project using FSR402, OLED display, DHT22, and DC
 - OLED Display
 - Motor Driver
 - 5V DC Motor
+
+Added block diagrams for Smart Hospital Bed project.
+
+Uploaded system architecture and hardware connection diagrams.
+
+Added project block diagrams and circuit overview.
+
+Updated repository with block diagrams and hardware flow.
+
+Added Smart Hospital Bed Version 1 diagrams.

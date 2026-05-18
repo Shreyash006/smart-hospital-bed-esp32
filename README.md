@@ -73,5 +73,5 @@ A short demonstration video of the project has been uploaded to this repository.
 ---
 
 ## Author
-Shreyash Shinde
+Shreyash Shinde - 
 ENTC Engineering Student

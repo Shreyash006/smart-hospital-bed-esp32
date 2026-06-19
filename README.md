@@ -69,6 +69,8 @@ A short demonstration video of the project has been uploaded to this repository.
 
 ### 18 May 2026
 - Added block diagrams.
+## 19 June 2026
+- Added Final Project Report.
 
 ---
 
